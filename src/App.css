@@ -1,0 +1,89 @@
+
+body{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  font-size: 1rem;
+  color: #777;
+}
+
+input{
+  padding: .5rem;
+  font-size: 1.3rem;
+}
+
+button{
+  background: none;
+  font-size: 1.3rem;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  color: #777;
+}
+
+.boxes{
+  display: flex;
+  width: 100%;
+}
+.box{
+  border-right: 1px solid gray;
+  flex: 1;
+  height: 40px;
+}
+
+.progress{
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  position: relative;
+}
+
+.progress-inner{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lawngreen;
+  opacity: .5;
+  transform: scaleX(0);
+  transform-origin: center left;
+  transition: transform .5s ease-in;
+}
+
+.overlay{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: rgba(255, 255, 255, .9);
+  visibility: hidden;
+  transform: scale(1.2);
+  transition: all .5s ease-in-out;
+}
+
+.is-overlay-open.main-ui{
+  filter: blur(4px);
+}
+
+.is-overlay-open.overlay{
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+@keyframes text-animate {
+  0%{
+      transform: scale(1.2);
+      color: red;
+  }
+  100%{
+      transform: scale(1);
+      color: black;
+  }
+}
+
+.animate-text-wrong{
+  animation: text-animate .4s ease-in;
+}
